@@ -6,7 +6,7 @@
     <script type="text/javascript" src="jquery-3.6.4.min.js"></script>
 
     <!--[if IE]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
-    <script type="text/javascript" src="bumblebee.js"></script>
+    <script type="text/javascript" src="html5-canvas-drawing-app.js"></script>
     <style>
       .centered {
       position: fixed;
@@ -44,6 +44,7 @@
     <button  class="button" onclick="redrawInterface('canvas');">Draw on Canvas</button>
     -->
 <div class="fixed" id="canvasDiv" style="visibility:visible;touch-action: none;"></div>
+    <div class="fixed" id="colorMenuDiv" style="visibility:hidden;overflow-y:scroll ;touch-action: pan-y;background-color:#52d1ed;"></div>
     <script type="text/javascript"> $(document).ready(function() {
     	 prepareCanvas();
       });</script>

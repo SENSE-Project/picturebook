@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Buzzy and Fuzzy</title>
+    <style>
+        body {
+            overflow: hidden;
+        }
+
+        .book-page {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .nav-buttons {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Page 1 -->
+            <div class="col book-page" id="page1">
+                <img src="page1.jpg" alt="Introduction">
+                <div class="nav-buttons">
+                    <button class="btn btn-primary" onclick="nextPage('page2')">Next</button>
+                </div>
+            </div>
+
+            <!-- Page 2 -->
+            <div class="col book-page d-none" id="page2">
+                <img src="page2.jpg" alt="Fuzzy Warmth">
+                <p>Why do bumblebees have fur?</p>
+                <p>Bumblebees have fur to keep them warm when it's cold. Their fuzzy coats act like cozy sweaters,
+                    helping them stay toasty in chilly weather.</p>
+                <div class="nav-buttons">
+                    <button class="btn btn-primary" onclick="prevPage('page1')">Previous</button>
+                    <button class="btn btn-primary" onclick="nextPage('page3')">Next</button>
+                </div>
+            </div>
+
+            <!-- Page 3 -->
+            <div class="col book-page d-none" id="page3">
+                <img src="page3.jpg" alt="Colourful Fur">
+                <p>Why do bumblebees have colourful fur?</p>
+                <p>Their colourful fur serves as a warning for other animals. It tells them, "Hey, I might sting if you
+                    bother me!" It's like a bright sign saying, "Caution: Bumblebee at work!"</p>
+                <div class="nav-buttons">
+                    <button class="btn btn-primary" onclick="prevPage('page2')">Previous</button>
+                    <button class="btn btn-primary" onclick="nextPage('page4')">Next</button>
+                </div>
+            </div>
+
+            <!-- Page 4 -->
+            <div class="col book-page d-none" id="page4">
+                <img src="page4.jpg" alt="Buzzing">
+                <p>Why do bumblebees make a buzzing sound?</p>
+                <p>Bumblebees are great at playing musical instruments! Their buzzing is like a special song they play
+                    by moving their wings super fast. They use this buzzing to talk to their bee friends, telling them
+                    about yummy food or possible dangers.</p>
+                <div class="nav-buttons">
+                    <button class="btn btn-primary" onclick="prevPage('page3')">Previous</button>
+                    <button class="btn btn-primary" onclick="nextPage('page5')">Next</button>
+                </div>
+            </div>
+
+            <!-- Page 5 -->
+            <div class="col book-page d-none" id="page5">
+                <img src="page5.jpg" alt="Eyes">
+                <p>Why do bumblebees have big eyes?</p>
+                <p>Bumblebees have amazing eyesight! They wear two big compound eyes like colorful sunglasses and three
+                    tiny eyes on top of their heads. These eyes help them see lots of colors and navigate around, kind
+                    of like wearing superhero goggles!</p>
+                <div class="nav-buttons">
+                    <button class="btn btn-primary" onclick="prevPage('page4')">Previous</button>
+                    <button class="btn btn-primary" onclick="nextPage('page6')">Next</button>
+                </div>
+            </div>
+
+            <!-- Page 6 -->
+            <div class="col book-page d-none" id="page6">
+                <img src="page6.jpg" alt="Pollen baskets">
+                <p>Why do bumblebees carry pollen baskets?</p>
+                <p>Bumblebees are excellent collectors and bakers! Female worker bumblebees have special pockets on
+                    their back legs called pollen baskets. They use these baskets to carry pollen, which is like flour
+                    for baking. The collected pollen becomes yummy food for the whole bee family, especially the little
+                    ones.</p>
+                <div class="nav-buttons">
+                    <button class="btn btn-primary" onclick="prevPage('page5')">Previous</button>
+                    <button class="btn btn-primary" onclick="nextPage('page7')">Next</button>
+                </div>
+            </div>
+
+            <!-- Page 7 -->
+            <div class="col book-page d-none" id="page7">
+                <img src="page7.jpg" alt="Pollination">
+                <p>How does bumblebee fur help in making flowers?</p>
+                <p>Bumblebees are like garden helpers in furry suits! When they visit flowers, their fuzzy fur collects
+                    pollen, like gathering sprinkles. Then, when they buzz from flower to flower, some of that pollen
+                    falls off and helps new flowers grow. It's like bees are magical helpers in the garden, making sure
+                    plants have everything they need to blossom!</p>
+                <div class="nav-buttons">
+                    <button class="btn btn-primary" onclick="prevPage('page6')">Previous</button>
+                    <button class="btn btn-primary" onclick="nextPage('page8')">Next</button>
+                </div>
+            </div>
+
+
+            <!-- Page 8 -->
+            <div class="col book-page d-none" id="page8">
+                <h1>Bumblebee Quiz</h1>
+
+                <form id="quizForm">
+                    <ol>
+                        <li>
+                            <p>1. Why do bumblebees wear fuzzy coats?</p>
+                            <label><input type="radio" name="q1" value="a"> a) To fly faster</label>
+                            <label><input type="radio" name="q1" value="b"> b) To stay warm</label>
+                            <label><input type="radio" name="q1" value="c"> c) For camouflage</label>
+                            <label><input type="radio" name="q1" value="d"> d) Fashion statement</label>
+                        </li>
+                        <li>
+                            <p>2. What is the purpose of the bright colors on a bumblebee's fur?</p>
+                            <label><input type="radio" name="q2" value="a"> a) Attracting mates</label>
+                            <label><input type="radio" name="q2" value="b"> b) To warn other animals</label>
+                            <label><input type="radio" name="q2" value="c"> c) Reflecting sunlight</label>
+                            <label><input type="radio" name="q2" value="d"> d) Expressing emotions</label>
+                        </li>
+                        <li>
+                            <p>3. How do bumblebees communicate with their buzzing sound?</p>
+                            <label><input type="radio" name="q3" value="a"> a) Celebrating</label>
+                            <label><input type="radio" name="q3" value="b"> b) Warning of danger</label>
+                            <label><input type="radio" name="q3" value="c"> c) They're talking to other bees</label>
+                            <label><input type="radio" name="q3" value="d"> d) Expressing happiness</label>
+                        </li>
+                        <li>
+                            <p>4. What do the big compound eyes of bumblebees help them with?</p>
+                            <label><input type="radio" name="q4" value="a"> a) Cooking</label>
+                            <label><input type="radio" name="q4" value="b"> b) Spotting flowers</label>
+                            <label><input type="radio" name="q4" value="c"> c) Reading books</label>
+                            <label><input type="radio" name="q4" value="d"> d) Watching TV</label>
+                        </li>
+                        <li>
+                            <p>5. What are pollen baskets on a bumblebee's legs used for?</p>
+                            <label><input type="radio" name="q5" value="a"> a) Carrying snacks</label>
+                            <label><input type="radio" name="q5" value="b"> b) Storing water</label>
+                            <label><input type="radio" name="q5" value="c"> c) Transporting pollen</label>
+                            <label><input type="radio" name="q5" value="d"> d) Decorating the hive</label>
+                        </li>
+                        <li>
+                            <p>6. How does bee fur help in making flowers?</p>
+                            <label><input type="radio" name="q6" value="a"> a) By making them colorful</label>
+                            <label><input type="radio" name="q6" value="b"> b) By emitting fragrance</label>
+                            <label><input type="radio" name="q6" value="c"> c) By collecting and spreading
+                                pollen</label>
+                            <label><input type="radio" name="q6" value="d"> d) By attracting butterflies</label>
+                        </li>
+                    </ol>
+
+                    <button class="btn btn-primary" type="button" onclick="submitQuiz()">Submit</button>
+                </form>
+
+                <p id="result"></p>
+
+                <div class="nav-buttons">
+                    <button class="btn btn-primary" onclick="prevPage('page7')">Previous</button>
+                    <button class="btn btn-primary" onclick="nextPage('page1')">Home</button>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script>
+        function nextPage(pageId) {
+            document.getElementById(pageId).classList.remove('d-none');
+            document.getElementById(pageId).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function prevPage(pageId) {
+            document.getElementById(pageId).classList.add('d-none');
+            document.getElementById(pageId).scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+
+    <script>
+        function submitQuiz() {
+            const correctAnswers = ["b", "b", "c", "b", "c", "c"];
+            let score = 0;
+
+            for (let i = 1; i <= 6; i++) {
+                const selectedAnswer = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selectedAnswer) {
+                    if (selectedAnswer.value === correctAnswers[i - 1]) {
+                        score++;
+                    }
+                }
+            }
+
+            const resultElement = document.getElementById("result");
+            resultElement.textContent = `You got ${score} out of 6 correct. The correct answers are given below:`;
+
+            // Display correct answers
+            for (let i = 1; i <= 6; i++) {
+                const correctAnswer = document.querySelector(`input[name="q${i}"][value="${correctAnswers[i - 1]}"]`).parentNode.textContent;
+                resultElement.innerHTML += `<br><strong>Question ${i}:</strong> ${correctAnswer}`;
+            }
+        }
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
