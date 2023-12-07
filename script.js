@@ -4,9 +4,17 @@ const images = document.querySelectorAll('img');
 
 const audio1 = new Audio('audio/beehive.mp4');
 const audio2 = new Audio('audio/Tree bark 2 lr.mp4');
+const audio3 = new Audio('audio/bumblebee.mp4');
+const audio4 = new Audio('audio/fur2.mp4');
+const audio5 = new Audio('audio/croc-scales.mp4');
+const audio6 = new Audio('audio/sand.mp4');
 
 audio1.muted = false;
 audio2.muted = false;
+audio3.muted = false;
+audio4.muted = false;
+audio5.muted = false;
+audio6.muted = false;
 
 images.forEach(image => {
 	const imageId = image.getAttribute('id');
@@ -28,7 +36,20 @@ images.forEach(image => {
 		} else if (imageId === 'image2') {
 			console.log('Image 2 selected');
 			audio2.play();
+		} else if (imageId === 'image_b_2') {
+			console.log('Image_b_2 selected');
+			audio3.play();
+		} else if (imageId === 'image_b_3') {
+			console.log('Image_b_3 selected');
+			audio4.play();
+		} else if (imageId === 'image_b_4') {
+			console.log('Image_b_4 selected');
+			audio5.play();
+		} else if (imageId === 'image_b_5') {
+			console.log('Image_b_5 selected');
+			audio6.play();
 		}
+
 	});
 
 	image.addEventListener('mouseup', () => {
@@ -36,6 +57,10 @@ images.forEach(image => {
 
 		audio1.pause();
 		audio2.pause();
+		audio3.pause();
+		audio4.pause();
+		audio5.pause();
+		audio6.pause();
 	});
 
 	// Handle touch events
@@ -54,12 +79,24 @@ images.forEach(image => {
 		image.style.top = touchY + 'px';
 		activeImage = image;
 
-		if (imageId === 'image1') {
+		if (imageId === 'image1' || imageId === 'image_b_1') {
 			console.log('Image 1 selected');
 			audio1.play();
 		} else if (imageId === 'image2') {
 			console.log('Image 2 selected');
 			audio2.play();
+		} else if (imageId === 'image_b_2') {
+			console.log('Image_b_2 selected');
+			audio3.play();
+		} else if (imageId === 'image_b_3') {
+			console.log('Image_b_3 selected');
+			audio4.play();
+		} else if (imageId === 'image_b_4') {
+			console.log('Image_b_4 selected');
+			audio5.play();
+		} else if (imageId === 'image_b_5') {
+			console.log('Image_b_5 selected');
+			audio6.play();
 		}
 	});
 
@@ -79,6 +116,10 @@ images.forEach(image => {
 
 		audio1.pause();
 		audio2.pause();
+		audio3.pause();
+		audio4.pause();
+		audio5.pause();
+		audio6.pause();
 	});
 });
 
@@ -87,6 +128,10 @@ const stopSwipe = () => {
 
 	audio1.pause();
 	audio2.pause();
+	audio3.pause();
+	audio4.pause();
+	audio5.pause();
+	audio6.pause();
 };
 
 function submitQuiz() {
