@@ -1,3 +1,6 @@
+window.addEventListener('load', 
+  function() { 
+
 let activeImage = null;
 
 const images = document.querySelectorAll('img');
@@ -15,6 +18,9 @@ audio3.muted = false;
 audio4.muted = false;
 audio5.muted = false;
 audio6.muted = false;
+
+
+
 
 images.forEach(image => {
 	const imageId = image.getAttribute('id');
@@ -133,6 +139,8 @@ const stopSwipe = () => {
 	audio5.pause();
 	audio6.pause();
 };
+
+});
 
 function submitQuiz() {
 	const correctAnswers = ["b", "b", "c", "b", "c", "c"];
