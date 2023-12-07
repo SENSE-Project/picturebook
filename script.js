@@ -22,7 +22,7 @@ images.forEach(image => {
 		image.classList.add('image-active');
 		activeImage = image;
 
-		if (imageId === 'image1') {
+		if (imageId === 'image1' || imageId === 'image_b_1') {
 			console.log('Image 1 selected');
 			audio1.play();
 		} else if (imageId === 'image2') {
