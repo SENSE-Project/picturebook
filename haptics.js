@@ -11,6 +11,10 @@ const audio3 = new Audio('audio/bumblebee.mp4');
 const audio4 = new Audio('audio/fur2.mp4');
 const audio5 = new Audio('audio/croc-scales.mp4');
 const audio6 = new Audio('audio/sand.mp4');
+const audio7 = new Audio('audio/Tree bark 4 rl.mp4');
+const audio8 = new Audio('audio/Velvet lr.mp4');
+const audio9 = new Audio('audio/Wooden hard smooth 2 tb.mp4');
+const audio10 = new Audio('audio/Tree bark 2 lr.mp4');
 
 audio1.muted = false;
 audio2.muted = false;
@@ -18,6 +22,10 @@ audio3.muted = false;
 audio4.muted = false;
 audio5.muted = false;
 audio6.muted = false;
+audio7.muted = false;
+audio8.muted = false;
+audio9.muted = false;
+audio10.muted = false;
 
 
 
@@ -39,7 +47,7 @@ images.forEach(image => {
 		if (imageId === 'image1' || imageId === 'image_b_1') {
 			console.log('Image 1 selected');
 			audio1.play();
-		} else if (imageId === 'image2') {
+		} else if (imageId === 'image2'  || imageId === 'image_t_1') {
 			console.log('Image 2 selected');
 			audio2.play();
 		} else if (imageId === 'image_b_2') {
@@ -54,6 +62,18 @@ images.forEach(image => {
 		} else if (imageId === 'image_b_5') {
 			console.log('Image_b_5 selected');
 			audio6.play();
+		} else if (imageId === 'image_t_2') {
+			console.log('Image_t_2 selected');
+			audio7.play();
+		} else if (imageId === 'image_t_3') {
+			console.log('Image_t_3 selected');
+			audio8.play();
+		} else if (imageId === 'image_t_4') {
+			console.log('Image_t_4 selected');
+			audio9.play();
+		} else if (imageId === 'image_t_5') {
+			console.log('Image_t_5 selected');
+			audio10.play();
 		}
 
 	});
@@ -67,6 +87,10 @@ images.forEach(image => {
 		audio4.pause();
 		audio5.pause();
 		audio6.pause();
+		audio7.pause();
+		audio8.pause();
+		audio9.pause();
+		audio10.pause()
 	});
 
 	// Handle touch events
@@ -88,7 +112,7 @@ images.forEach(image => {
 		if (imageId === 'image1' || imageId === 'image_b_1') {
 			console.log('Image 1 selected');
 			audio1.play();
-		} else if (imageId === 'image2') {
+		} else if (imageId === 'image2'  || imageId === 'image_t_1') {
 			console.log('Image 2 selected');
 			audio2.play();
 		} else if (imageId === 'image_b_2') {
@@ -103,6 +127,18 @@ images.forEach(image => {
 		} else if (imageId === 'image_b_5') {
 			console.log('Image_b_5 selected');
 			audio6.play();
+		} else if (imageId === 'image_t_2') {
+			console.log('Image_t_2 selected');
+			audio7.play();
+		} else if (imageId === 'image_t_3') {
+			console.log('Image_t_3 selected');
+			audio8.play();
+		} else if (imageId === 'image_t_4') {
+			console.log('Image_t_4 selected');
+			audio9.play();
+		} else if (imageId === 'image_t_5') {
+			console.log('Image_t_5 selected');
+			audio10.play();
 		}
 	});
 
@@ -126,6 +162,10 @@ images.forEach(image => {
 		audio4.pause();
 		audio5.pause();
 		audio6.pause();
+		audio7.pause();
+		audio8.pause();
+		audio9.pause();
+		audio10.pause()
 	});
 });
 
@@ -138,6 +178,10 @@ const stopSwipe = () => {
 	audio4.pause();
 	audio5.pause();
 	audio6.pause();
+	audio7.pause();
+		audio8.pause();
+		audio9.pause();
+		audio10.pause()
 };
 
 });
