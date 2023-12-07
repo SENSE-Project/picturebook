@@ -7,42 +7,6 @@
     <title>SENSE Picturebook</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- <style>
-        .logo {
-            width: 200px;
-            height: width * 0.75;
-            margin: 0 auto;
-            display: block;
-        }
-
-        .heading {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 30px;
-        }
-
-        .image-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 20px;
-        }
-
-        .image-container img {
-            width: 200px;
-            height: 200px;
-            margin-right: 40px;
-        }
-
-        .button {
-            background-color: #007bff;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-    </style> -->
 </head>
 
 <body>
@@ -53,14 +17,14 @@
 
         <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center">
             <div class="me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center">
-                <img src="images/bumblebee_1000x1000.png" width="320px" class="mx-auto">
+                <img id="image1" src="images/bumblebee_1000x1000.png" width="320px" class="mx-auto">
                 <div class="my-3 py-3">
                     <a href="#" class="btn btn-outline-success" role="button">Bella the Bumblebee</a>
                 </div>
 
             </div>
             <div class="me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center">
-                <img src="images/treebark_1000x1000.png" width="320px" class="mx-auto">
+                <img id="image2" src="images/treebark_1000x1000.png" width="320px" class="mx-auto">
                 <div class="my-3 p-3">
                     <a href="#" class="btn btn-outline-success" role="button">Barky the Tree bark</a>
                 </div>
@@ -70,23 +34,98 @@
     </div>
 
     <script>
-        // JavaScript code to handle image swipes and audio playback
-        const images = document.querySelectorAll('.image');
-        const audio = new Audio('audio.mp3');
+        let activeImage = null;
 
-        for (const image of images) {
-            image.addEventListener('mousedown', startSwipe);
-            image.addEventListener('mouseup', stopSwipe);
-        }
+const images = document.querySelectorAll('img');
 
-        function startSwipe() {
-            audio.play();
-        }
+const audio1 = new Audio('audio/beehive.mp4');
+const audio2 = new Audio('audio/Tree bark 2 lr.mp4');
 
-        function stopSwipe() {
-            audio.pause();
-        }
-    </script>
+audio1.muted = false;
+audio2.muted = false;
+
+images.forEach(image => {
+  const imageId = image.getAttribute('id');
+
+  // Handle mouse events
+  image.addEventListener('mousedown', () => {
+    console.log('mousedown event');
+
+    if (activeImage) {
+      activeImage.classList.remove('image-active');
+    }
+
+    image.classList.add('image-active');
+    activeImage = image;
+
+    if (imageId === 'image1') {
+      console.log('Image 1 selected');
+      audio1.play();
+    } else if (imageId === 'image2') {
+      console.log('Image 2 selected');
+      audio2.play();
+    }
+  });
+
+  image.addEventListener('mouseup', () => {
+    console.log('mouseup event');
+
+    audio1.pause();
+    audio2.pause();
+  });
+
+  // Handle touch events
+  image.addEventListener('touchstart', (e) => {
+    console.log('touchstart event');
+
+    if (activeImage) {
+      activeImage.classList.remove('image-active');
+    }
+
+    const touches = e.touches;
+    const firstTouch = touches[0];
+    const touchX = firstTouch.clientX;
+    const touchY = firstTouch.clientY;
+    image.style.left = touchX + 'px';
+    image.style.top = touchY + 'px';
+    activeImage = image;
+
+    if (imageId === 'image1') {
+      console.log('Image 1 selected');
+      audio1.play();
+    } else if (imageId === 'image2') {
+      console.log('Image 2 selected');
+      audio2.play();
+    }
+  });
+
+  image.addEventListener('touchmove', (e) => {
+    console.log('touchmove event');
+
+    const touches = e.touches;
+    const firstTouch = touches[0];
+    const touchX = firstTouch.clientX;
+    const touchY = firstTouch.clientY;
+    image.style.left = touchX + 'px';
+    image.style.top = touchY + 'px';
+  });
+
+  image.addEventListener('touchend', () => {
+    console.log('touchend event');
+
+    audio1.pause();
+    audio2.pause();
+  });
+});
+
+const stopSwipe = () => {
+  console.log('stopSwipe event');
+
+  audio1.pause();
+  audio2.pause();
+};
+</script>
+    
 </body>
 
 </html>
