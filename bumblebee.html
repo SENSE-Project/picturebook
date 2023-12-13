@@ -14,26 +14,66 @@
 </head>
 
 <body>
-  <div class="container">
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #009203;">
+  <div class="container-fluid vh-100 border border-success border-5">
+    
+    <nav class="navbar navbar-expand-lg fixed-top">
+      
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.html"></a>
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
           aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-link" aria-current="page" href="index.html">Home</a>
-            <a class="nav-link active" href="bumblebee.html">Bella the Bumblebee</a>
+
+        <div class="collapse navbar-collapse d-lg-flex" id="navbarNavAltMarkup">
+          <div class="navbar-nav nav-underline col justify-content-lg-start">
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link active" aria-current="page" href="bumblebee.html">Bella the Bumblebee</a>
             <a class="nav-link" href="treebark.html">Barky the Tree bark</a>
+
+            <ul class="pagination d-lg-flex col justify-content-lg-end">
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            </ul>
+
           </div>
+
+
+          
         </div>
       </div>
+        
     </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <img id="image_b_1" src="images/bumblebee_1000x1000.png" width="320px" class="mx-auto">
+        </div>
+  
+        <div class="col">
+          <div class="p-3 mt-4 border border-success-subtle rounded-3">Join Bella, the busy bumblebee, as she
+            flutters through the meadow, pollinating flowers and spreading joy wherever she goes. Bella's heart
+            is as big as her buzz, and she's always ready to lend a helping hand to her friends. Come along and
+            discover the amazing textures that help Bella thrive in her world.</div>
+        </div>
+  
+      </div>
+
   </div>
 
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
       <div class="col">
         <img id="image_b_1" src="images/bumblebee_1000x1000.png" width="320px" class="mx-auto">
